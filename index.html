@@ -99,27 +99,30 @@
 }
 .reveal .slides section.title-slide .title-poster {
   position: absolute;
-  right: 28px;
+  right: 24px;
   top: 50%;
   transform: translateY(-50%);
-  height: min(68%, 470px);
+  height: min(58%, 400px);
   width: auto;
-  max-width: 42%;
+  max-width: 36%;
   object-fit: contain;
   object-position: right center;
   pointer-events: none;
   z-index: 0;
 }
 .reveal .slides section.title-slide .title-copy {
-  max-width: 52%;
+  max-width: 62%;
   text-align: left;
   position: relative;
   z-index: 2;
 }
 .reveal .slides section.title-slide h1 {
-  font-size: 1.72em;
-  line-height: 1.04;
+  font-size: 1.5em;
+  line-height: 1.06;
   margin: 0 0 0.08em;
+}
+.reveal .slides section.title-slide h1 .title-line {
+  white-space: nowrap;
 }
 .reveal .slides section.title-slide .kicker {
   margin: 0 0 0.4em;
@@ -207,7 +210,7 @@
   height: 56px;
   margin-top: 0.55rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   flex-shrink: 0;
 }
@@ -271,7 +274,7 @@
         <img class="title-poster" src="assets/poster.png" alt="">
         <div class="title-copy">
           <p class="kicker" style="--accent:var(--carolina)">UNC Chapel Hill</p>
-          <h1>Grok Bot<br/>Student Build Night</h1>
+          <h1>Grok Bot<br/><span class="title-line">Student Build Night</span></h1>
           <p class="subtitle">One hour to build · then demo live</p>
           <p class="meta">6:00 – 8:00pm · demos at 7:30</p>
           <div class="logo-row">
