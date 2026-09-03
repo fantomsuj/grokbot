@@ -34,6 +34,19 @@
   padding: 36px 52px;
   box-sizing: border-box;
 }
+/* Fit-to-screen scaling: shrink slide content so it never gets cut off */
+@media (max-height: 900px) {
+  .reveal .slides section { zoom: 0.85; }
+}
+@media (max-height: 760px) {
+  .reveal .slides section { zoom: 0.75; }
+}
+@media (max-height: 640px) {
+  .reveal .slides section { zoom: 0.65; }
+}
+@media (max-height: 540px) {
+  .reveal .slides section { zoom: 0.55; }
+}
 .reveal h1, .reveal h2, .reveal h3 {
   font-family: Inter, sans-serif;
   font-weight: 800;
@@ -304,6 +317,16 @@
         <ul><li>~2 minutes — show what it does</li><li>Working demo &gt; talk about the idea</li><li>Who it is for + the job it does</li><li>Hosts queue · wrap by 8</li></ul>
         <aside class="notes">Cheer loud. After: Pro redemption, merch, 1789/next steps. Perks are Cursor Pro month + merch only.</aside>
         <div class="footer-logos"><img class="logo-unc" src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC" /><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" /><img class="logo-cursor" src="assets/cursor-logo.svg" alt="Cursor" /><img class="logo-poster" src="assets/poster.png" alt="Grok Bot" style="height:26px;border-radius:6px" /></div>
+      </section>
+      <section class="center-slide accent-teal">
+        <p class="kicker">Challenge</p>
+        <h2>Grok Bot Student Build Day</h2>
+        <ul>
+          <li>Build a Grok Bot that solves a real back-to-school problem</li>
+          <li>Post your entry on LinkedIn with #GrokBotForStudents</li>
+          <li>Subscriptions for the 10 winning builds</li>
+        </ul>
+        <aside class="notes">Entries judged on engagement, quality, creativity. U.S. users 18+, must be pursuing a degree at an accredited college or university.</aside>
       </section>
     </div>
         </div>
