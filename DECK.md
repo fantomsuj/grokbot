@@ -1,4 +1,4 @@
-# UNC Grokbot Build Night — Deck Copy (v2 + icebreaker)
+# UNC Grok Bot Build Night - Deck Copy
 
 ## 1. UNC Grokbot Build Night
 - One hour to build · then demo live
@@ -61,7 +61,15 @@ _Product_
 
 **Notes:** Not another chatbot. Agents that touch your tools, run on a clock, and collaborate.
 
-## 9. Tonight
+## 9. The loop
+_How to use one_
+- Task → skill → routine
+- Connector > clicking
+- Draft first. You send.
+
+**Notes:** Draw it with your hands: do the task once with the bot, save the method as a skill, then set a routine for when it runs. Use a connector when one exists — more reliable than clicking a website. And keep sending/buying/deleting behind your approval; the bot preps, you approve the last inch.
+
+## 10. Tonight
 _Tonight_
 - ~1 hour to build something real with GrokBot
 - Theme revealed here at the event
@@ -69,7 +77,7 @@ _Tonight_
 
 **Notes:** Clear promise. Theme stays secret until you say it. Build then demo.
 
-## 10. What you get
+## 11. What you get
 _Perks_
 - 1 month of Cursor Pro (GrokBot included)
 - SpaceXAI / Cursor merch — stickers + keychains
@@ -78,7 +86,7 @@ _Perks_
 
 **Notes:** Courtesy of SpaceXAI. Redemption details for Cursor Pro shared at the event.
 
-## 11. What counts
+## 12. What counts
 _Rules_
 - Theme drops tonight — build something creative with GrokBot
 - Start from existing code, APIs, or connected accounts
@@ -87,7 +95,7 @@ _Rules_
 
 **Notes:** Existing projects and connected accounts are fair game. Primarily solo; collaboration encouraged.
 
-## 12. Samples (inspiration)
+## 13. Samples (inspiration)
 _Starters_
 - Course Compass — semester survival
 - Franklin After Dark — campus nights
@@ -95,7 +103,7 @@ _Starters_
 
 **Notes:** Inspiration only — not clone these. Show range: useful and playful.
 
-## 13. Build clock
+## 14. Build clock
 _Clock_
 - Build: ~6:35 → 7:25
 - Queue: 7:25
@@ -103,14 +111,14 @@ _Clock_
 
 **Notes:** Start the clock. Hosts float. Show the coolest thing it does.
 
-## 14. Go build.
+## 15. Go build.
 - Theme time → then build
 - Ask for help early
 - See you at 7:30
 
 **Notes:** Reveal theme live (not on slide). Kick off build.
 
-## 15. Demo time · 7:30
+## 16. Demo time · 7:30
 _Competition_
 - ~2 minutes — show what it does
 - Working demo > talk about the idea
@@ -118,14 +126,3 @@ _Competition_
 - Hosts queue · wrap by 8
 
 **Notes:** Cheer loud. After: Pro redemption, merch, 1789/next steps. Perks are Cursor Pro month + merch only.
-
-## 16. Get the apps · macOS & iOS
-_QR_
-- macOS app — full editor + local build tools
-- iOS app — build and monitor from anywhere
-- Scan the QR to install on your device
-
-[ QR CODE — links to grokbot.app/download ]
-
-**Notes:** Leave this up during wrap-up and Q&A so people can
-scan while you close.
