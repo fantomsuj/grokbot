@@ -57,16 +57,16 @@
   text-shadow: none;
 }
 .reveal h1 { font-size: 2.35em; margin: 0 0 0.2em; }
-.reveal h2 { font-size: 1.65em; margin: 0 0 0.4em; }
+.reveal h2 { font-size: 1.65em; margin: 0 0 0.25em; }
 .reveal p, .reveal li {
   font-size: 0.92em;
-  line-height: 1.32;
+  line-height: 1.22;
   color: #E5E7EB;
   font-weight: 500;
 }
-.reveal ul { list-style: none; margin: 0.5em 0 0; padding: 0; }
+.reveal ul { list-style: none; margin: 0.15em 0 0; padding: 0; }
 .reveal li {
-  margin: 0.32em 0;
+  margin: 0.16em 0;
   padding-left: 1.15em;
   position: relative;
 }
@@ -83,7 +83,7 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin: 0 0 0.85em;
+  margin: 0 0 0.5em;
 }
 .reveal .subtitle {
   color: var(--muted);
@@ -104,10 +104,10 @@
 /* Title / poster */
 /* Title slide: clean dark backdrop (was a tiled face collage) */
 .reveal .title-slide {
-  background: #000 url("assets/poster.png") center / contain no-repeat !important;
+  background: radial-gradient(1200px 700px at 70% 20%, #1c2333 0%, #0b0e14 55%, #000 100%) !important;
 }
 .reveal .title-slide .title-copy {
-  max-width: 52%;
+  max-width: 82%;
   text-align: left;
   position: relative;
   z-index: 2;
@@ -154,32 +154,32 @@
 .partner-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-top: 0.85rem;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
 }
 .partner-card {
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 14px;
-  padding: 0.75rem 0.85rem;
+  padding: 0.4rem 0.65rem;
   background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  min-height: 84px;
+  min-height: 48px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .partner-card .label {
-  font-size: 0.62em;
+  font-size: 0.58em;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 700;
 }
-.partner-card img { height: 34px; width: auto; margin-top: 0.8rem; object-fit: contain; align-self: flex-start; }
+.partner-card img { height: 22px; width: auto; margin-top: 0.25rem; object-fit: contain; align-self: flex-start; }
 .partner-card .word {
-  font-size: 1.05em;
+  font-size: 0.85em;
   font-weight: 800;
   color: #fff;
-  margin-top: 0.75rem;
+  margin-top: 0.2rem;
   letter-spacing: -0.02em;
 }
 .footer-logos {
@@ -306,7 +306,7 @@
         <aside class="notes">Start the clock. Hosts float. Show the coolest thing it does.</aside>
       </section>
       <section class="center-slide accent-sky">
-        <h1 class="big-line">Go cook.</h1>
+        <h1 class="big-line">Go build.</h1>
         <p class="subtitle">See you at 7:30</p>
         <ul><li>Theme time → then build</li><li>Ask for help early</li><li>See you at 7:30</li></ul>
         <aside class="notes">Reveal theme live (not on slide). Kick off build.</aside>
@@ -328,6 +328,22 @@
           <li>Subscriptions for the 10 winning builds</li>
         </ul>
         <aside class="notes">Entries judged on engagement, quality, creativity. U.S. users 18+, must be pursuing a degree at an accredited college or university.</aside>
+      </section>
+      <section class="center-slide accent-teal">
+        <p class="kicker">Install</p>
+        <h2>Get the app</h2>
+        <p>Scan to install Grok Bot on your device</p>
+        <p>Scan to install Grok Bot on your device</p>
+        <div style="display:flex;gap:40px;justify-content:center;align-items:flex-start">
+          <div>
+            <img src="qr/grokbot-download-qr.svg" alt="QR code to download the macOS Grok Bot app" style="width:220px;height:220px;background:#fff;border-radius:12px;padding:14px" />
+            <p style="margin:8px 0 0;font-size:0.9em;color:#D1D5DB">macOS</p>
+          </div>
+          <div>
+            <img src="qr/grokbot-download-qr.svg" alt="QR code to download the iOS Grok Bot app" style="width:220px;height:220px;background:#fff;border-radius:12px;padding:14px" />
+            <p style="margin:8px 0 0;font-size:0.9em;color:#D1D5DB">iOS</p>
+          </div>
+        </div>
       </section>
     </div>
         </div>
