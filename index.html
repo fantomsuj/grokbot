@@ -448,6 +448,19 @@ html, body { background: var(--cream); }
   font-weight: 500;
 }
 
+
+/* Team demo */
+.team-demo { position:relative; text-align:center; }
+.team-demo .demo-body { height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding-bottom:28px; position:relative; z-index:2; }
+.team-demo .demo-time { color:var(--muted); font-size:22px; margin-bottom:18px; }
+.team-demo h2 { font-size:52px; margin-bottom:28px; }
+.team-demo .demo-link { color:var(--purple-deep); font-size:24px; font-weight:800; text-decoration:none; }
+.team-demo .demo-link:hover { text-decoration:underline; }
+.team-demo .b-blue { width:118px; right:42px; bottom:34px; }
+.team-demo .b-pink { width:98px; right:10px; bottom:8px; }
+.team-demo .b-orange { width:72px; right:126px; bottom:78px; }
+.team-demo .b-teal { width:92px; right:104px; bottom:0; }
+
 /* Loop */
 .loop-steps {
   display: grid;
@@ -1012,6 +1025,22 @@ html, body { background: var(--cream); }
   <aside class="notes">Cheer loud. After: Pro redemption, merch, 1789 / next steps. Keep it to Cursor Pro month + merch.</aside>
 </section>
 
+
+<section class="team-demo" data-background-color="#F7F4EF">
+  <div class="blob-layer">
+    <img class="b-blue" src="assets/blobs/blue.svg" alt="">
+    <img class="b-pink" src="assets/blobs/pink.svg" alt="">
+    <img class="b-orange" src="assets/blobs/orange.svg" alt="">
+    <img class="b-teal" src="assets/blobs/teal.svg" alt="">
+  </div>
+  <div class="demo-body">
+    <p class="demo-time">6:30–6:45</p>
+    <h2>SpaceX AI team demo</h2>
+    <a class="demo-link" href="https://anysphere-co.zoom.us/j/85943750401?pwd=lANoRJE7mNFr4JUa4AFhWJLnntWdpb.1">Zoom link</a>
+  </div>
+  <img class="foot-spacex" src="assets/spacex-black.svg" alt="SpaceX">
+  <aside class="notes">SpaceX AI team demo runs 6:30–6:45. The Zoom link opens the supplied meeting.</aside>
+</section>
 </div></div>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
