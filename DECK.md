@@ -118,3 +118,14 @@ _Competition_
 - Hosts queue · wrap by 8
 
 **Notes:** Cheer loud. After: Pro redemption, merch, 1789/next steps. Perks are Cursor Pro month + merch only.
+
+## 16. Get the apps · macOS & iOS
+_QR_
+- macOS app — full editor + local build tools
+- iOS app — build and monitor from anywhere
+- Scan the QR to install on your device
+
+[ QR CODE — links to grokbot.app/download ]
+
+**Notes:** Leave this up during wrap-up and Q&A so people can
+scan while you close.
