@@ -1,128 +1,97 @@
-# UNC Grok Bot Build Night - Deck Copy
+# UNC Grok Bot Build Night — Deck Copy
 
-## 1. UNC Grokbot Build Night
-- One hour to build · then demo live
+Cream / official Grok Bot template. 12 slides. 1280×720 reveal.js.
 
-**Notes:** High energy welcome. Short talk, then you build. Theme drops tonight — stay for that.
+## 1. Title — Meet your new AI teammates
+- Agents with their own computers that get work done.
+- UNC Chapel Hill Student Build Night
+- 6:00–8:00pm · demos at 7:30
 
-## 2. Surprising AI
-_Icebreaker_
-- What’s the weirdest / coolest way you’ve used AI?
-- Turn to a neighbor · 90 seconds
-- We’ll steal a few shout-outs
+**Notes:** High-energy welcome. Short talk, then they build. Theme drops live — do not put it on the slide. Point at the blobs: these are teammates, not chat windows.
 
-**Notes:** Pose the question, give ~90 seconds to talk with neighbors, then pull 2–3 shout-outs from the room. Keep it light. Bridges into tonight’s build. (~2–3 min inside the 6:15–6:35 talk block.)
+## 2. Agenda
+- 01 Welcome
+- 02 Who we are / campus path
+- 03 What is Grok Bot
+- 04 Build time
+- 05 Audience demos at 7:30
 
-## 3. Who we are
-_Open_
-- [Host names]
-- Local builders · Innovate Carolina / 1789 crew
-- Here to help you ship tonight
+**Notes:** Walk the room through the night: talk is short, build is the point, demos at 7:30, wrap by 8.
 
-**Notes:** Human intros, one line each. Under a minute total.
+## 3. AI is evolving fast
+- Chatbots — Answer questions, people do the work
+- Copilots — Help with tasks, people drive every step
+- AI teammates — Own outcomes, start to finish. People set direction and review
 
-## 4. The student innovation path
-_Campus_
-- Innovate Carolina — UNC I&E hub
-- 1789 — incubator, mentors, mixers, Venture Fund
-- Launch Chapel Hill — accelerator downtown
+**Notes:** Three beats: chatbots answer, copilots help, teammates own the job. Tonight is the third step — agents with computers.
 
-**Notes:** Quick ladder. If tonight sparks something, there is a path after.
+## 4. The challenge with most agents
+- Complicated setup
+- Local first
+- Painful sharing
+- Connector limits
+- Constant monitoring
 
-## 5. 1789, quick
-_Students_
-- Mentors + community
-- Mixers and pitches
-- Seed rounds via the 1789 Venture Fund
+**Notes:** These are the usual agent headaches: brittle setup, local-only, hard to share, weak connectors, you babysit every command. Grok Bot is the other shape.
 
-**Notes:** Real support for student builders. Intros after if people want them.
+## 5. Today / Tomorrow
+- Today: high-value vs rote, repetitive work
+- Grok Bots operate 24/7 — Course Compass, Inbox triage, Outreach, Franklin After Dark, Deck helper
+- Tomorrow: leverage time + increased productivity
 
-## 6. Launch Chapel Hill
-_Downtown_
-- Innovate Carolina Junction (downtown)
-- Launch Powered by KPMG · Launch Local
-- Summer accelerators for student founders
+**Notes:** Orange blocks are the busywork. Hand those to bots. Green is leverage. Tomorrow the afternoon opens up. Student-flavored names are inspiration, not assignments.
 
-**Notes:** Downtown, concrete next step for founders.
+## 6. Introducing Grok Bot
+- Create bots for jobs
+- Message like teammates
+- Memory
+- Log into tools
+- Routines
+- Share
 
-## 7. SpaceXAI / Cursor
-_Stack_
-- Cursor is part of SpaceX / SpaceXAI
-- Building useful AI: Grok, Cursor, GrokBot
-- Tonight tools, courtesy of SpaceXAI
+**Notes:** Not another chatbot. Agents with computers: jobs, messages, memory, logins, routines, share. Demo the app if the room is with you; otherwise keep moving.
 
-**Notes:** Exciting, not brochure. SpaceXAI is backing tonight Pro + merch.
-
-## 8. What is GrokBot?
-_Product_
-- AI agents you spin up for real work
-- Connect Gmail, Slack, calendar, the web
-- Schedules · hand work off to each other
-
-**Notes:** Not another chatbot. Agents that touch your tools, run on a clock, and collaborate.
-
-## 9. The loop
-_How to use one_
-- Task → skill → routine
+## 7. The loop
+- Task → Skill → Routine
 - Connector > clicking
 - Draft first. You send.
 
-**Notes:** Draw it with your hands: do the task once with the bot, save the method as a skill, then set a routine for when it runs. Use a connector when one exists — more reliable than clicking a website. And keep sending/buying/deleting behind your approval; the bot preps, you approve the last inch.
+**Notes:** Draw it with your hands: task once, save as a skill, then a routine. Prefer a connector over clicking a website. Keep send / buy / delete behind their approval — the bot preps, they take the last inch.
 
-## 10. Tonight
-_Tonight_
-- ~1 hour to build something real with GrokBot
-- Theme revealed here at the event
-- Then you demo it live
+## 8. Who we are / campus path
+- Innovate Carolina — UNC I&E hub
+- 1789 — incubator, mentors, mixers, Venture Fund
+- Launch Chapel Hill — accelerator downtown
+- SpaceXAI / Cursor — tonight’s stack
+- Grok Bot — agents with computers
 
-**Notes:** Clear promise. Theme stays secret until you say it. Build then demo.
+**Notes:** Human intros first if hosts haven’t gone. Then the ladder in one breath. Intros after if people want them.
 
-## 11. What you get
-_Perks_
-- 1 month of Cursor Pro (GrokBot included)
-- SpaceXAI / Cursor merch — stickers + keychains
-- An hour to build with other builders
-- A live demo slot
+## 9. Tonight’s build
+- Theme drops live — stays off the slides
+- Samples: Course Compass · Franklin After Dark
+- What counts: one clear job · touches a real tool · demoable in two minutes · solo build, help each other
 
-**Notes:** Courtesy of SpaceXAI. Redemption details for Cursor Pro shared at the event.
+**Notes:** Do not show the theme. Samples are inspiration, not clones. Existing code, APIs, and connected accounts are fair game. Prior Grok Bot experience welcome.
 
-## 12. What counts
-_Rules_
-- Theme drops tonight — build something creative with GrokBot
-- Start from existing code, APIs, or connected accounts
-- Prior GrokBot experience welcome
-- Solo build · talk, share, help each other
+## 10. What you get
+- 1 month of Cursor Pro (Grok Bot included)
+- Stickers + keychains
+- Courtesy of SpaceXAI
 
-**Notes:** Existing projects and connected accounts are fair game. Primarily solo; collaboration encouraged.
+**Notes:** Perks are Cursor Pro month + merch only. Redemption details shared in the room, not on the slide.
 
-## 13. Samples (inspiration)
-_Starters_
-- Course Compass — semester survival
-- Franklin After Dark — campus nights
-- One clear job · actually useful
+## 11. Build time!
+- Tables have Grok Bot templates you can scan
+- Help is in the room
+- Demos at 7:30
 
-**Notes:** Inspiration only — not clone these. Show range: useful and playful.
+**Notes:** Reveal the theme now if you haven’t. Start the clock: build ~6:35 → 7:25, queue 7:25, live demos 7:30. Hosts float. Ask for help early.
 
-## 14. Build clock
-_Clock_
-- Build: ~6:35 → 7:25
-- Queue: 7:25
-- Live demos: 7:30
-
-**Notes:** Start the clock. Hosts float. Show the coolest thing it does.
-
-## 15. Go build.
-- Theme time → then build
-- Ask for help early
-- See you at 7:30
-
-**Notes:** Reveal theme live (not on slide). Kick off build.
-
-## 16. Demo time · 7:30
-_Competition_
+## 12. Demo time · 7:30
 - ~2 minutes — show what it does
-- Working demo > talk about the idea
-- Who it is for + the job it does
+- Working demo > the pitch
+- Who it’s for + the job it does
 - Hosts queue · wrap by 8
 
-**Notes:** Cheer loud. After: Pro redemption, merch, 1789/next steps. Perks are Cursor Pro month + merch only.
+**Notes:** Cheer loud. After: Pro redemption, merch, 1789 / next steps.

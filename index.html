@@ -3,27 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UNC Grokbot Build Night</title>
+<title>Grok Bot · UNC Student Build Night</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 :root {
-  --bg: #000000;
-  --ink: #FFFFFF;
-  --muted: #9CA3AF;
-  --carolina: #4B9CD3;
-  --navy: #13294B;
-  --teal: #2DD4BF;
-  --pink: #F472B6;
-  --orange: #FB923C;
-  --sky: #38BDF8;
-  --lime: #A3E635;
+  --cream: #F7F4EF;
+  --ink: #111111;
+  --muted: #6F6A64;
+  --rule: rgba(17,17,17,0.88);
+  --purple: #B8A4E8;
+  --purple-deep: #9B7FE0;
+  --card: #FFFCFA;
+  --card-border: #E4DED6;
+  --pain-bg: #FDECEC;
+  --pain-border: #F0B999;
+  --pain-x: #E24B4B;
+  --green: #C8E6B8;
+  --green-deep: #3F9A5A;
+  --orange-work: #F0A36A;
+  --white: #FFFFFF;
 }
-.reveal-viewport { background: var(--bg) !important; }
-.reveal .slides section { height: 100%; overflow: hidden; }
-.reveal .slides > section > section { padding: 36px 52px; }
+html, body { background: var(--cream); }
+.reveal-viewport { background: var(--cream) !important; }
 .reveal {
   font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--ink);
@@ -31,315 +35,983 @@
 }
 .reveal .slides { text-align: left; }
 .reveal .slides section {
-  padding: 36px 52px;
+  padding: 44px 56px 52px;
   box-sizing: border-box;
+  overflow: hidden;
+  color: var(--ink);
 }
 .reveal h1, .reveal h2, .reveal h3 {
   font-family: Inter, sans-serif;
   font-weight: 800;
-  color: #fff;
+  color: var(--ink);
   text-transform: none;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.045em;
   line-height: 1.05;
   text-shadow: none;
+  margin: 0;
 }
-.reveal h1 { font-size: 2.35em; margin: 0 0 0.2em; }
-.reveal h2 { font-size: 1.65em; margin: 0 0 0.4em; }
-.reveal p, .reveal li {
-  font-size: 0.92em;
-  line-height: 1.32;
-  color: #E5E7EB;
+.reveal h1 { font-size: 64px; }
+.reveal h2 { font-size: 42px; }
+.reveal p { margin: 0; }
+.reveal .progress { color: var(--purple); height: 3px; }
+.reveal .controls { color: var(--ink); }
+.reveal .slide-number {
+  color: rgba(17,17,17,0.38);
+  font-family: Inter, sans-serif;
   font-weight: 500;
+  right: 18px;
+  bottom: 14px;
 }
-.reveal ul { list-style: none; margin: 0.5em 0 0; padding: 0; }
-.reveal li {
-  margin: 0.32em 0;
-  padding-left: 1.15em;
-  position: relative;
-}
-.reveal li::before {
-  content: "";
-  width: 0.42em; height: 0.42em;
-  border-radius: 999px;
-  background: var(--accent, var(--carolina));
-  position: absolute; left: 0; top: 0.48em;
-}
-.reveal .kicker {
-  color: var(--accent, var(--carolina));
-  font-size: 0.52em;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin: 0 0 0.85em;
-}
-.reveal .subtitle {
-  color: var(--muted);
-  font-size: 1.05em;
+.hl { color: var(--purple); }
+.lede {
+  font-size: 22px;
   font-weight: 500;
-  margin-top: 0.45em;
-}
-.reveal .center-slide { text-align: center; }
-.reveal .center-slide h1, .reveal .center-slide .subtitle, .reveal .center-slide ul {
-  text-align: center;
-}
-.reveal .center-slide ul { display: inline-block; text-align: left; }
-.reveal .big-line { font-size: 2.2em; font-weight: 800; margin: 0.15em 0; }
-.reveal .progress { color: var(--carolina); height: 3px; }
-.reveal .controls { color: var(--carolina); }
-.reveal .slide-number { color: rgba(255,255,255,0.45); font-family: Inter, sans-serif; }
-
-/* Title / poster */
-.reveal .title-slide {
-  background: #000 url("assets/poster.png") right bottom / min(52%, 440px) auto no-repeat !important;
-}
-.reveal .title-slide .title-copy {
-  max-width: 52%;
-  text-align: left;
-  position: relative;
-  z-index: 2;
-}
-.reveal .title-slide h1 {
-  font-size: 2.05em;
-  line-height: 1.05;
-}
-.reveal .title-slide .subtitle { color: #D1D5DB; font-size: 1.05em; }
-.reveal .title-slide .meta { color: #6B7280; font-size: 0.85em; margin-top: 1.2em; font-weight: 600; letter-spacing: 0.04em; }
-
-/* Logo strip */
-.logo-row {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-.logo-row img, .logo-row object {
-  height: 36px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-.logo-row .logo-spacex { height: 22px; }
-.logo-row .logo-unc { height: 44px; }
-.logo-row .logo-cursor { height: 34px; border-radius: 8px; }
-.logo-row .logo-poster { height: 48px; border-radius: 10px; }
-.logo-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.45rem 0.85rem;
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 999px;
-  background: rgba(255,255,255,0.04);
-  color: #fff;
-  font-size: 0.72em;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-.logo-pill img { height: 18px; width: auto; }
-.partner-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-top: 0.85rem;
-}
-.partner-card {
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 14px;
-  padding: 0.75rem 0.85rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  min-height: 84px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.partner-card .label {
-  font-size: 0.62em;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 700;
-}
-.partner-card img { height: 34px; width: auto; margin-top: 0.8rem; object-fit: contain; align-self: flex-start; }
-.partner-card .word {
-  font-size: 1.05em;
-  font-weight: 800;
-  color: #fff;
-  margin-top: 0.75rem;
+  color: var(--ink);
+  margin-top: 18px;
   letter-spacing: -0.02em;
 }
-.footer-logos {
+.meta {
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+}
+.gb-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.gb-lockup img { width: 36px; height: 36px; display: block; }
+.foot-spacex {
   position: absolute;
-  left: 52px;
-  right: 52px;
+  left: 56px;
   bottom: 28px;
+  height: 15px;
+  width: auto;
+  display: block;
+}
+.blob-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.blob-layer img { position: absolute; display: block; }
+
+/* Title */
+.title-slide { padding: 40px 56px 56px !important; }
+.title-slide h1 { font-size: 72px; max-width: 11ch; margin-top: 54px; }
+.title-slide .b-pink { width: 168px; top: 36px; left: 46%; }
+.title-slide .b-orange { width: 210px; top: 22%; right: 7%; }
+.title-slide .b-blue { width: 230px; top: -48px; right: -54px; }
+.title-slide .b-purple { width: 300px; bottom: -110px; left: 34%; }
+.title-slide .b-green { width: 170px; top: 46%; right: -28px; }
+.title-slide .b-teal { width: 210px; bottom: -72px; right: -36px; }
+.title-slide .b-lavender { width: 120px; top: 58%; left: 58%; }
+
+/* Agenda */
+.agenda-wrap {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 28px;
+}
+.agenda-wrap h2 { font-size: 64px; padding-top: 8px; }
+.agenda-list { list-style: none; margin: 0; padding: 0; }
+.agenda-list li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 18px;
+  align-items: baseline;
+  padding: 18px 0 16px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.agenda-list li:first-child { padding-top: 4px; }
+.agenda-list .n {
+  color: #B0AAA3;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-size: 26px;
+}
+
+/* Stairs */
+.stairs-slide h2 { margin-bottom: 28px; }
+.stairs {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  height: 470px;
+  padding-right: 56px;
+  position: relative;
+}
+.stair-card {
+  background: var(--white);
+  border: 1.5px solid #D9D3CB;
+  border-radius: 18px;
+  padding: 26px 24px 22px;
+  width: 268px;
+  min-height: 210px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.stair-card:nth-child(1) { margin-bottom: 0; }
+.stair-card:nth-child(2) { margin-bottom: 72px; }
+.stair-card:nth-child(3) {
+  margin-bottom: 148px;
+  border: 2.5px solid var(--purple-deep);
+  min-height: 248px;
+}
+.stair-ico {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 18px;
+  color: var(--ink);
+}
+.stair-card h3 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 0 0 10px;
+}
+.stair-card p {
+  font-size: 16px;
+  line-height: 1.35;
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.teammate-blobs img {
+  position: absolute;
+  pointer-events: none;
+}
+.teammate-blobs .tb-pink { width: 92px; right: 54px; bottom: -28px; }
+.teammate-blobs .tb-purple { width: 120px; right: -18px; bottom: -36px; }
+.teammate-blobs .tb-green { width: 72px; right: 18px; bottom: -8px; }
+.output-axis {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  bottom: 24px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.output-axis span {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.output-axis .line {
+  flex: 1;
+  width: 1.5px;
+  background: var(--ink);
+  position: relative;
+}
+.output-axis .line::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translate(-50%, -6px);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid var(--ink);
+}
+
+/* Pain */
+.pain-slide h2 { max-width: 16ch; margin-bottom: 22px; font-size: 40px; }
+.pain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+}
+.pain-card {
+  background: var(--pain-bg);
+  border: 1.5px solid var(--pain-border);
+  border-radius: 16px;
+  padding: 14px 14px 12px;
+  min-height: 228px;
+}
+.pain-card.span2 { grid-column: span 1; }
+.pain-hd {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  opacity: 0.9;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
 }
-.footer-logos img { height: 22px; width: auto; object-fit: contain; }
-.footer-logos .logo-unc { height: 28px; }
-.footer-logos .logo-spacex { height: 14px; }
-.accent-teal { --accent: var(--teal); }
-.accent-pink { --accent: var(--pink); }
-.accent-orange { --accent: var(--orange); }
-.accent-sky { --accent: var(--sky); }
-.accent-lime { --accent: var(--lime); }
-.chip-row { display:flex; flex-wrap:wrap; gap:0.5rem; margin: 0.8rem 0 0.2rem; }
-.chip {
-  border-radius: 999px;
-  padding: 0.35rem 0.75rem;
-  font-size: 0.62em;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  border: 1px solid rgba(255,255,255,0.14);
+.x-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 99px;
+  background: var(--pain-x);
   color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  flex: 0 0 auto;
+  line-height: 1;
+}
+.pain-inner {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #3A3A3A;
+  min-height: 148px;
+}
+.pain-inner .dim { color: #9A9590; }
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  padding: 4px 0;
+  color: #222;
+  font-weight: 500;
+}
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  padding: 7px 0;
+  font-weight: 600;
+  border-bottom: 1px solid #F0EBE6;
+}
+.status-row:last-child { border-bottom: 0; }
+.pill-ok, .pill-no {
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 99px;
+  padding: 3px 8px;
+}
+.pill-ok { background: #D8F3DC; color: #1F7A3A; }
+.pill-no { background: #F8D4D4; color: #C0392B; }
+.run-row { display: flex; gap: 8px; margin-top: 12px; }
+.run-row span {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+.btn-cancel { background: #EEECE8; color: #111; }
+.btn-run { background: #111; color: #fff; }
+
+/* Today / tomorrow */
+.tt-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+.tt-head h2 { font-size: 34px; max-width: 18ch; }
+.legend { display: flex; gap: 18px; font-size: 13px; font-weight: 600; color: var(--ink); padding-top: 6px; }
+.dot { width: 10px; height: 10px; border-radius: 99px; display: inline-block; margin-right: 6px; }
+.dot-g { background: #B5DFA8; }
+.dot-o { background: var(--orange-work); }
+.tt-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.95fr 1.1fr;
+  gap: 22px;
+  align-items: start;
+}
+.col-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+.day {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 8px 10px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.slot {
+  height: 22px;
+  border-radius: 6px;
+}
+.slot.hv { background: #C8E6B8; }
+.slot.rote { background: var(--orange-work); }
+.slot.boost {
+  background: var(--green-deep);
+  color: #fff;
+  height: 92px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding: 8px;
+}
+.bot-col { padding-top: 4px; }
+.bot-kicker {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+.bot-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  border-radius: 999px;
+  padding: 8px 14px 8px 8px;
+  margin: 0 auto 10px;
+  width: 230px;
+  box-shadow: 0 8px 20px rgba(20,16,12,0.07);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.bot-pill img { width: 28px; height: 28px; }
+
+/* Features */
+.feat-slide h2 { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+.feat-slide h2 img { width: 42px; height: 42px; }
+.feat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.feat-card {
+  background: var(--white);
+  border: 1.5px solid var(--card-border);
+  border-radius: 18px;
+  padding: 22px 20px 20px;
+  min-height: 196px;
+}
+.feat-card img { width: 36px; height: 36px; margin-bottom: 16px; }
+.feat-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin: 0 0 8px;
+}
+.feat-card p {
+  font-size: 15px;
+  line-height: 1.35;
+  color: #3A3733;
+  font-weight: 500;
 }
 
-</style></head><body>
+/* Loop */
+.loop-steps {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr 28px 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin: 28px 0 28px;
+}
+.loop-card {
+  background: var(--white);
+  border: 1.5px solid var(--card-border);
+  border-radius: 18px;
+  padding: 22px 20px;
+  min-height: 210px;
+}
+.loop-card .step {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--purple-deep);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.loop-card h3 { font-size: 28px; margin-bottom: 10px; }
+.loop-card p { font-size: 16px; line-height: 1.35; color: #333; }
+.loop-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--purple-deep);
+  font-size: 28px;
+  font-weight: 700;
+}
+.principles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.principle {
+  border-radius: 14px;
+  background: #EFE8FB;
+  padding: 16px 18px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+/* Campus path */
+.path-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 36px;
+  position: relative;
+}
+.path-row::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background: #E4DED6;
+  z-index: 0;
+}
+.path-card {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.path-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 99px;
+  background: var(--purple);
+  margin: 14px auto 16px;
+  border: 3px solid var(--cream);
+  box-shadow: 0 0 0 2px var(--purple);
+}
+.path-card h3 { font-size: 16px; margin-bottom: 8px; letter-spacing: -0.03em; }
+.path-card p { font-size: 13px; color: var(--muted); line-height: 1.35; font-weight: 500; }
+.campus-logos {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 36px;
+}
+.campus-logos img.unc { height: 42px; }
+.campus-logos img.sx { height: 16px; }
+
+/* Tonight */
+.sample-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 22px 0 22px;
+}
+.sample-card {
+  background: var(--white);
+  border: 1.5px solid var(--card-border);
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.sample-card img { width: 48px; height: 48px; }
+.sample-card h3 { font-size: 22px; margin-bottom: 6px; }
+.sample-card p { font-size: 15px; color: #3A3733; line-height: 1.35; }
+.counts {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.count-chip {
+  background: #EFE8FB;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Perks */
+.perk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 28px;
+}
+.perk-card {
+  background: var(--white);
+  border: 1.5px solid var(--card-border);
+  border-radius: 20px;
+  padding: 28px 26px;
+  min-height: 280px;
+}
+.perk-card .kicker {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple-deep);
+  margin-bottom: 12px;
+}
+.perk-card h3 { font-size: 34px; margin-bottom: 12px; }
+.perk-card p { font-size: 18px; line-height: 1.4; color: #333; }
+.perk-card .courtesy {
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Build time */
+.build-slide h2 { font-size: 72px; }
+.build-copy {
+  position: absolute;
+  right: 64px;
+  top: 46%;
+  transform: translateY(-50%);
+  max-width: 520px;
+  text-align: right;
+  font-style: italic;
+  color: #6B6660;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+.build-copy .dash { display: block; margin-top: 14px; font-style: italic; }
+.build-slide .b-red {
+  width: 420px;
+  left: -90px;
+  bottom: -160px;
+}
+
+/* Close */
+.close-slide h1 { font-size: 68px; margin-top: 48px; }
+.close-slide .lede { font-size: 24px; }
+.close-list {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+  max-width: 18ch;
+}
+.close-list li {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  padding: 10px 0;
+  border-bottom: 1px solid #E4DED6;
+}
+.close-slide .b-green { width: 240px; right: -40px; bottom: -80px; }
+.close-slide .b-orange { width: 160px; right: 160px; bottom: -50px; }
+.close-slide .b-pink { width: 130px; right: 40px; top: 80px; }
+</style>
+</head>
+<body>
 <div class="reveal"><div class="slides">
-      <section class="center-slide title-slide" data-background-color="#000000">
-        <div class="title-copy">
-          <p class="kicker" style="--accent:var(--carolina)">UNC Chapel Hill</p>
-          <h1>Grok Bot<br/>Student Build Night</h1>
-          <p class="subtitle">One hour to build · then demo live</p>
-          <p class="meta">6:00 – 8:00pm · demos at 7:30</p>
-          <div class="logo-row" style="margin-top:1.8rem">
-            <span class="logo-pill"><img src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="" /> UNC</span>
-            <span class="logo-pill"><img src="assets/spacex-white.svg" alt="" style="height:12px" /> SpaceXAI</span>
-            <span class="logo-pill"><img src="assets/cursor-logo.svg" alt="" style="height:16px;border-radius:4px" /> Cursor</span>
-          </div>
-        </div>
-        <aside class="notes">High energy welcome. Short talk, then you build. Theme drops tonight — stay for that.</aside>
-      </section>
-      <section class="center-slide accent-pink">
-        <p class="kicker">Icebreaker</p>
-        <h1 style="font-size:1.85em;max-width:16ch;margin-left:auto;margin-right:auto">What’s the weirdest / coolest way you’ve used AI?</h1>
-        <p class="subtitle">Turn to a neighbor · 90 seconds</p>
-        <p class="subtitle" style="color:#9CA3AF;font-size:0.9em;margin-top:0.35em">We’ll steal a few shout-outs</p>
-        <aside class="notes">Pose the question, give ~90 seconds to talk with neighbors, then pull 2–3 shout-outs from the room. Keep it light. Bridges into tonight’s build. (~2–3 min inside the 6:15–6:35 talk block.)</aside>
-      </section>
-      <section class="accent-orange">
-        <p class="kicker">Open</p>
-        <h2>Who we are</h2>
-        <ul><li>[Host names]</li><li>Local builders · Innovate Carolina / 1789 crew</li><li>Here to help you ship tonight</li></ul>
-        <aside class="notes">Human intros, one line each. Under a minute total.</aside>
-        <div class="footer-logos"><img class="logo-unc" src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC" /><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" /><img class="logo-cursor" src="assets/cursor-logo.svg" alt="Cursor" /><img class="logo-poster" src="assets/poster.png" alt="Grok Bot" style="height:26px;border-radius:6px" /></div>
-      </section>
-      <section class="accent-sky">
-        <p class="kicker">Campus</p>
-        <h2>The student innovation path</h2>
-        <ul><li>Innovate Carolina — UNC I&amp;E hub</li><li>1789 — incubator, mentors, mixers, Venture Fund</li><li>Launch Chapel Hill — accelerator downtown</li></ul>
-        <div class="partner-grid"><div class="partner-card"><div class="label">Campus</div><img src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC Chapel Hill" /></div><div class="partner-card"><div class="label">SpaceXAI</div><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" style="height:22px" /><div class="word">SpaceXAI / Cursor</div></div><div class="partner-card"><div class="label">Tonight</div><img src="assets/poster.png" alt="Grok Bot" style="height:48px;border-radius:10px;object-fit:cover;width:88px" /><div class="word">Grok Bot</div></div></div>
-        <aside class="notes">Quick ladder. If tonight sparks something, there is a path after.</aside>
-      </section>
-      <section class="accent-lime">
-        <p class="kicker">Students</p>
-        <h2>1789, quick</h2>
-        <ul><li>Mentors + community</li><li>Mixers and pitches</li><li>Seed rounds via the 1789 Venture Fund</li></ul>
-        <aside class="notes">Real support for student builders. Intros after if people want them.</aside>
-      </section>
-      <section class="accent-teal">
-        <p class="kicker">Downtown</p>
-        <h2>Launch Chapel Hill</h2>
-        <ul><li>Innovate Carolina Junction (downtown)</li><li>Launch Powered by KPMG · Launch Local</li><li>Summer accelerators for student founders</li></ul>
-        <aside class="notes">Downtown, concrete next step for founders.</aside>
-      </section>
-      <section class="accent-pink">
-        <p class="kicker">Stack</p>
-        <h2>SpaceXAI / Cursor</h2>
-        <ul><li>Cursor is part of SpaceX / SpaceXAI</li><li>Building useful AI: Grok, Cursor, GrokBot</li><li>Tonight tools, courtesy of SpaceXAI</li></ul>
-        <div class="partner-grid"><div class="partner-card"><div class="label">Campus</div><img src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC Chapel Hill" /></div><div class="partner-card"><div class="label">SpaceXAI</div><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" style="height:22px" /><div class="word">SpaceXAI / Cursor</div></div><div class="partner-card"><div class="label">Tonight</div><img src="assets/poster.png" alt="Grok Bot" style="height:48px;border-radius:10px;object-fit:cover;width:88px" /><div class="word">Grok Bot</div></div></div>
-        <aside class="notes">Exciting, not brochure. SpaceXAI is backing tonight Pro + merch.</aside>
-      </section>
-      <section class="accent-orange">
-        <p class="kicker">Product</p>
-        <h2>What is GrokBot?</h2>
-        <ul><li>AI agents you spin up for real work</li><li>Connect Gmail, Slack, calendar, the web</li><li>Schedules · hand work off to each other</li></ul>
-        <aside class="notes">Not another chatbot. Agents that touch your tools, run on a clock, and collaborate.</aside>
-      </section>
-      <section class="accent-sky"><p class="kicker">How to use one</p><h2>The loop</h2><div class="chip-row" style="margin:0.4rem 0 1rem"><span class="chip" style="border-color:#38BDF8;color:#38BDF8">Task</span><span class="chip" style="border-color:rgba(255,255,255,0.25);color:#9CA3AF">then</span><span class="chip" style="border-color:#2DD4BF;color:#2DD4BF">Skill</span><span class="chip" style="border-color:rgba(255,255,255,0.25);color:#9CA3AF">then</span><span class="chip" style="border-color:#A3E635;color:#A3E635">Routine</span></div><ul><li>Connector &gt; clicking</li><li>Draft first. You send.</li></ul><aside class="notes">Draw it with your hands: do the task once with the bot, save the method as a skill, then set a routine for when it runs. Use a connector when one exists - more reliable than clicking a website. Keep sending, buying, and deleting behind your approval: the bot preps, you approve the last inch.</aside></section>
-      <section class="accent-sky">
-        <p class="kicker">Tonight</p>
-        <h2>Tonight</h2>
-        <ul><li>~1 hour to build something real with GrokBot</li><li>Theme revealed here at the event</li><li>Then you demo it live</li></ul>
-        <aside class="notes">Clear promise. Theme stays secret until you say it. Build then demo.</aside>
-      </section>
-      <section class="accent-lime">
-        <p class="kicker">Perks</p>
-        <h2>What you get</h2>
-        <ul><li>1 month of Cursor Pro (GrokBot included)</li><li>SpaceXAI / Cursor merch — stickers + keychains</li><li>An hour to build with other builders</li><li>A live demo slot</li></ul>
-        <aside class="notes">Courtesy of SpaceXAI. Redemption details for Cursor Pro shared at the event.</aside>
-        <div class="footer-logos"><img class="logo-unc" src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC" /><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" /><img class="logo-cursor" src="assets/cursor-logo.svg" alt="Cursor" /><img class="logo-poster" src="assets/poster.png" alt="Grok Bot" style="height:26px;border-radius:6px" /></div>
-      </section>
-      <section class="accent-teal">
-        <p class="kicker">Rules</p>
-        <h2>What counts</h2>
-        <ul><li>Theme drops tonight — build something creative with GrokBot</li><li>Start from existing code, APIs, or connected accounts</li><li>Prior GrokBot experience welcome</li><li>Solo build · talk, share, help each other</li></ul>
-        <aside class="notes">Existing projects and connected accounts are fair game. Primarily solo; collaboration encouraged.</aside>
-      </section>
-      <section class="accent-pink">
-        <p class="kicker">Starters</p>
-        <h2>Samples (inspiration)</h2>
-        <div class="chip-row"><span class="chip" style="border-color:#2DD4BF;color:#2DD4BF">Course Compass</span><span class="chip" style="border-color:#F472B6;color:#F472B6">Franklin After Dark</span></div>
-        <ul><li>Course Compass — semester survival</li><li>Franklin After Dark — campus nights</li><li>One clear job · actually useful</li></ul>
-        <aside class="notes">Inspiration only — not clone these. Show range: useful and playful.</aside>
-      </section>
-      <section class="accent-orange">
-        <p class="kicker">Clock</p>
-        <h2>Build clock</h2>
-        <ul><li>Build: ~6:35 → 7:25</li><li>Queue: 7:25</li><li>Live demos: 7:30</li></ul>
-        <aside class="notes">Start the clock. Hosts float. Show the coolest thing it does.</aside>
-      </section>
-      <section class="center-slide accent-sky">
-        <h1 class="big-line">Go build.</h1>
-        <p class="subtitle">See you at 7:30</p>
-        <ul><li>Theme time → then build</li><li>Ask for help early</li><li>See you at 7:30</li></ul>
-        <aside class="notes">Reveal theme live (not on slide). Kick off build.</aside>
-        <div class="footer-logos"><img class="logo-unc" src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC" /><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" /><img class="logo-cursor" src="assets/cursor-logo.svg" alt="Cursor" /><img class="logo-poster" src="assets/poster.png" alt="Grok Bot" style="height:26px;border-radius:6px" /></div>
-      </section>
-      <section class="accent-lime">
-        <p class="kicker">Competition</p>
-        <h2>Demo time · 7:30</h2>
-        <ul><li>~2 minutes — show what it does</li><li>Working demo &gt; talk about the idea</li><li>Who it is for + the job it does</li><li>Hosts queue · wrap by 8</li></ul>
-        <aside class="notes">Cheer loud. After: Pro redemption, merch, 1789/next steps. Perks are Cursor Pro month + merch only.</aside>
-        <div class="footer-logos"><img class="logo-unc" src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC" /><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" /><img class="logo-cursor" src="assets/cursor-logo.svg" alt="Cursor" /><img class="logo-poster" src="assets/poster.png" alt="Grok Bot" style="height:26px;border-radius:6px" /></div>
-      </section>
+
+<section class="title-slide" data-background-color="#F7F4EF">
+  <div class="blob-layer">
+    <img class="b-blue" src="assets/blobs/blue.svg" alt="">
+    <img class="b-pink" src="assets/blobs/pink.svg" alt="">
+    <img class="b-orange" src="assets/blobs/orange.svg" alt="">
+    <img class="b-green" src="assets/blobs/green.svg" alt="">
+    <img class="b-lavender" src="assets/blobs/lavender.svg" alt="">
+    <img class="b-purple" src="assets/blobs/purple.svg" alt="">
+    <img class="b-teal" src="assets/blobs/teal.svg" alt="">
+  </div>
+  <div class="gb-lockup"><img src="assets/grokbot-mark.svg" alt=""> Grok Bot</div>
+  <h1>Meet your new<br><span class="hl">AI teammates</span></h1>
+  <p class="lede">Agents with their own computers that get work done.</p>
+  <p class="meta">UNC Chapel Hill Student Build Night<br>6:00–8:00pm · demos at 7:30</p>
+  <img class="foot-spacex" src="assets/spacex-black.svg" alt="SpaceX">
+  <aside class="notes">High-energy welcome. Short talk, then they build. Theme drops live — do not put it on the slide. Point at the blobs: these are teammates, not chat windows.</aside>
+</section>
+
+<section data-background-color="#F7F4EF">
+  <div class="agenda-wrap">
+    <h2>Agenda</h2>
+    <ol class="agenda-list">
+      <li><span class="n">01</span><span>Welcome</span></li>
+      <li><span class="n">02</span><span>Who we are / campus path</span></li>
+      <li><span class="n">03</span><span>What is Grok Bot</span></li>
+      <li><span class="n">04</span><span>Build time</span></li>
+      <li><span class="n">05</span><span>Audience demos at 7:30</span></li>
+    </ol>
+  </div>
+  <img class="foot-spacex" src="assets/spacex-black.svg" alt="SpaceX">
+  <aside class="notes">Walk the room through the night: talk is short, build is the point, demos at 7:30, wrap by 8.</aside>
+</section>
+
+<section class="stairs-slide" data-background-color="#F7F4EF">
+  <h2>AI is evolving fast</h2>
+  <div class="stairs">
+    <div class="stair-card">
+      <svg class="stair-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M8 26c0-7.7 6.3-14 14-14h2c7.2 0 13 5.8 13 13v1c0 2.2-1.8 4-4 4H16l-8 6v-10z" stroke="#111" stroke-width="2"/>
+      </svg>
+      <h3>Chatbots</h3>
+      <p>Answer questions, people do the work</p>
     </div>
-        </div>
-        <aside class="notes">High energy welcome. Short talk, then you build. Theme drops tonight — stay for that.</aside>
-      </section>
+    <div class="stair-card">
+      <svg class="stair-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M8 16l6-8 6 8M22 16l6-8 6 8M8 30l6-8 6 8M22 30l6-8 6 8" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3>Copilots</h3>
+      <p>Help with tasks, people drive every step</p>
+    </div>
+    <div class="stair-card">
+      <svg class="stair-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="14" cy="13" r="5" stroke="#9B7FE0" stroke-width="2"/>
+        <path d="M4 30c1.2-6 5-9 10-9s8.8 3 10 9" stroke="#9B7FE0" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="26" cy="13" r="5" stroke="#9B7FE0" stroke-width="2"/>
+        <path d="M18 30c1.2-6 5-9 10-9s8.8 3 10 9" stroke="#9B7FE0" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h3>AI teammates</h3>
+      <p>Own outcomes, start to finish. People set direction and review</p>
+      <div class="teammate-blobs">
+        <img class="tb-pink" src="assets/blobs/pink.svg" alt="">
+        <img class="tb-purple" src="assets/blobs/purple.svg" alt="">
+        <img class="tb-green" src="assets/blobs/green.svg" alt="">
+      </div>
+    </div>
+    <div class="output-axis"><span>Output</span><div class="line"></div></div>
+  </div>
+  <aside class="notes">Three beats: chatbots answer, copilots help, teammates own the job. Tonight is the third step — agents with computers.</aside>
+</section>
 
-      
+<section class="pain-slide" data-background-color="#F7F4EF">
+  <h2>The challenge with most agents</h2>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-hd"><span class="x-circle">×</span> Complicated setup</div>
+      <div class="pain-inner">
+        <div class="dim"># Project Instructions</div>
+        Use TypeScript for all new files<br>
+        Prefer functional components<br>
+        Keep business logic in services<br>
+        <div class="dim" style="margin-top:8px"># Code Style</div>
+        snake_case for database columns<br>
+        Follow the repository pattern
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-hd"><span class="x-circle">×</span> Local first</div>
+      <div class="pain-inner">
+        <div class="dim">Ran terminal packages.</div>
+        $ pnpm install<br>
+        $ pnpm --filter web build<br>
+        $ pnpm --filter api prisma generate<br>
+        $ pnpm --filter api db:seed:test
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-hd"><span class="x-circle">×</span> Painful sharing</div>
+      <div class="pain-inner" style="font-family:Inter,sans-serif">
+        <div class="file-row">📄 /apply-notion-styleguide.md</div>
+        <div class="file-row">📄 /outbound-sales-protocol.md</div>
+        <div class="file-row">📄 /global-design-standards.md</div>
+        <div class="file-row">📄 /code-review-frontend.md</div>
+        <div class="file-row">📄 /fix-merge-conflicts.md</div>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-hd"><span class="x-circle">×</span> Connector limits</div>
+      <div class="pain-inner">
+        <div class="status-row"><span>Gmail</span><span class="pill-ok">Connected</span></div>
+        <div class="status-row"><span>Slack</span><span class="pill-ok">Connected</span></div>
+        <div class="status-row"><span>Canvas</span><span class="pill-no">Unavailable</span></div>
+        <div class="status-row"><span>ConnectCarolina</span><span class="pill-no">Unavailable</span></div>
+      </div>
+    </div>
+    <div class="pain-card" style="grid-column: span 2;">
+      <div class="pain-hd"><span class="x-circle">×</span> Constant monitoring</div>
+      <div class="pain-inner">
+        pnpm install && pnpm --filter web build && pnpm --filter api prisma generate && pnpm --filter api db:seed:test
+        <div class="run-row"><span class="btn-cancel">Cancel</span><span class="btn-run">Run</span></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">These are the usual agent headaches: brittle setup, local-only, hard to share, weak connectors, you babysit every command. Grok Bot is the other shape.</aside>
+</section>
 
-      
+<section data-background-color="#F7F4EF">
+  <div class="tt-head">
+    <h2>Today everyone wastes time with routine work</h2>
+    <div class="legend">
+      <span><i class="dot dot-g"></i>High value / leverage</span>
+      <span><i class="dot dot-o"></i>Rote, repetitive work</span>
+    </div>
+  </div>
+  <div class="tt-grid">
+    <div>
+      <div class="col-title">Today</div>
+      <div class="day">
+        <span>9 am</span><div class="slot rote"></div>
+        <span></span><div class="slot rote"></div>
+        <span>10</span><div class="slot hv"></div>
+        <span></span><div class="slot hv"></div>
+        <span>11</span><div class="slot hv"></div>
+        <span></span><div class="slot hv"></div>
+        <span>12</span><div class="slot hv"></div>
+        <span></span><div class="slot rote"></div>
+        <span>1 pm</span><div class="slot hv"></div>
+        <span></span><div class="slot hv"></div>
+        <span>2</span><div class="slot hv"></div>
+        <span></span><div class="slot rote"></div>
+        <span>3</span><div class="slot rote"></div>
+        <span></span><div class="slot hv"></div>
+        <span>4</span><div class="slot hv"></div>
+        <span>5 pm</span><div class="slot hv"></div>
+      </div>
+    </div>
+    <div class="bot-col">
+      <div class="bot-kicker">Grok Bots operate 24/7</div>
+      <div class="bot-pill"><img src="assets/blobs/avatar-blue.svg" alt=""> Course Compass</div>
+      <div class="bot-pill"><img src="assets/blobs/avatar-orange.svg" alt=""> Inbox triage</div>
+      <div class="bot-pill"><img src="assets/blobs/avatar-pink.svg" alt=""> Outreach</div>
+      <div class="bot-pill"><img src="assets/blobs/avatar-teal.svg" alt=""> Franklin After Dark</div>
+      <div class="bot-pill"><img src="assets/blobs/avatar-purple.svg" alt=""> Deck helper</div>
+    </div>
+    <div>
+      <div class="col-title">Tomorrow</div>
+      <div class="day">
+        <span>9 am</span><div class="slot hv"></div>
+        <span></span><div class="slot hv"></div>
+        <span>10</span><div class="slot hv"></div>
+        <span></span><div class="slot hv"></div>
+        <span>11</span><div class="slot hv"></div>
+        <span></span><div class="slot hv"></div>
+        <span>12</span><div class="slot hv"></div>
+        <span></span><div class="slot hv"></div>
+        <span>1 pm</span><div class="slot hv"></div>
+        <span></span><div class="slot hv"></div>
+        <span>2</span><div class="slot boost" style="grid-row: span 6;">Increased<br>productivity</div>
+        <span>5 pm</span>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">Orange blocks are the busywork. Hand those to bots. Green is leverage. Tomorrow the afternoon opens up. Student-flavored names are inspiration, not assignments.</aside>
+</section>
 
-      
+<section class="feat-slide" data-background-color="#F7F4EF">
+  <h2><img src="assets/grokbot-mark.svg" alt=""> Introducing Grok Bot</h2>
+  <div class="feat-grid">
+    <div class="feat-card">
+      <img src="assets/blobs/avatar-pink.svg" alt="">
+      <h3>Create bots for jobs</h3>
+      <p>One teammate per job — not a single generic chat.</p>
+    </div>
+    <div class="feat-card">
+      <img src="assets/blobs/avatar-orange.svg" alt="">
+      <h3>Message like teammates</h3>
+      <p>Talk to them in a thread. They talk back, then go do the work.</p>
+    </div>
+    <div class="feat-card">
+      <img src="assets/blobs/avatar-purple.svg" alt="">
+      <h3>Memory</h3>
+      <p>Bots keep context and get sharper the more you work with them.</p>
+    </div>
+    <div class="feat-card">
+      <img src="assets/blobs/avatar-blue.svg" alt="">
+      <h3>Log into tools</h3>
+      <p>Gmail, Slack, Calendar, the web — they use them like you do.</p>
+    </div>
+    <div class="feat-card">
+      <img src="assets/blobs/avatar-teal.svg" alt="">
+      <h3>Routines</h3>
+      <p>Set a clock. They run overnight, on weekdays, or every hour.</p>
+    </div>
+    <div class="feat-card">
+      <img src="assets/blobs/avatar-green.svg" alt="">
+      <h3>Share</h3>
+      <p>Hand a bot to a classmate in one click. The job travels with it.</p>
+    </div>
+  </div>
+  <aside class="notes">Not another chatbot. Agents with computers: jobs, messages, memory, logins, routines, share. Demo the app if the room is with you; otherwise keep moving.</aside>
+</section>
 
-      
+<section data-background-color="#F7F4EF">
+  <h2>The loop</h2>
+  <p class="lede" style="margin-top:8px;margin-bottom:0;color:#6F6A64;font-size:18px">How to actually use one tonight</p>
+  <div class="loop-steps">
+    <div class="loop-card">
+      <div class="step">01</div>
+      <h3>Task</h3>
+      <p>Do the job once with the bot. Show it what good looks like.</p>
+    </div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-card">
+      <div class="step">02</div>
+      <h3>Skill</h3>
+      <p>Save the method. The bot should be able to do it again without you.</p>
+    </div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-card">
+      <div class="step">03</div>
+      <h3>Routine</h3>
+      <p>Put it on a clock. Morning, nightly, every Monday — it runs.</p>
+    </div>
+  </div>
+  <div class="principles">
+    <div class="principle">Connector &gt; clicking</div>
+    <div class="principle">Draft first. You send.</div>
+  </div>
+  <aside class="notes">Draw it with your hands: task once, save as a skill, then a routine. Prefer a connector over clicking a website. Keep send / buy / delete behind their approval — the bot preps, they take the last inch.</aside>
+</section>
 
-      
+<section data-background-color="#F7F4EF">
+  <h2>Who we are / campus path</h2>
+  <p class="lede" style="color:#6F6A64">Local builders, a campus ladder, and tonight’s tools.</p>
+  <div class="path-row">
+    <div class="path-card">
+      <div class="path-dot"></div>
+      <h3>Innovate Carolina</h3>
+      <p>UNC I&amp;E hub. If tonight sparks something, start here.</p>
+    </div>
+    <div class="path-card">
+      <div class="path-dot"></div>
+      <h3>1789</h3>
+      <p>Incubator, mentors, mixers, Venture Fund.</p>
+    </div>
+    <div class="path-card">
+      <div class="path-dot"></div>
+      <h3>Launch Chapel Hill</h3>
+      <p>Accelerator downtown. Next step for founders.</p>
+    </div>
+    <div class="path-card">
+      <div class="path-dot"></div>
+      <h3>SpaceXAI / Cursor</h3>
+      <p>Grok, Cursor, Grok Bot. Tonight’s stack.</p>
+    </div>
+    <div class="path-card">
+      <div class="path-dot"></div>
+      <h3>Grok Bot</h3>
+      <p>Agents with computers. What you build in this room.</p>
+    </div>
+  </div>
+  <div class="campus-logos">
+    <img class="unc" src="assets/interlocking-nc-white-navy-rgb.svg" alt="UNC">
+    <img class="sx" src="assets/spacex-black.svg" alt="SpaceX">
+  </div>
+  <aside class="notes">Human intros first if hosts haven’t gone. Then the ladder in one breath: Innovate Carolina, 1789, Launch, SpaceXAI/Cursor, Grok Bot tonight. Intros after if people want them.</aside>
+</section>
 
-      
+<section data-background-color="#F7F4EF">
+  <h2>Tonight’s build</h2>
+  <p class="lede">Theme drops live — it stays off the slides. Build something with a real action.</p>
+  <div class="sample-grid">
+    <div class="sample-card">
+      <img src="assets/blobs/avatar-blue.svg" alt="">
+      <div>
+        <h3>Course Compass</h3>
+        <p>Semester survival — one clear academic job, actually useful.</p>
+      </div>
+    </div>
+    <div class="sample-card">
+      <img src="assets/blobs/avatar-teal.svg" alt="">
+      <div>
+        <h3>Franklin After Dark</h3>
+        <p>Campus nights — a playful bot that still does something real.</p>
+      </div>
+    </div>
+  </div>
+  <p class="meta" style="margin:0 0 12px;font-weight:700;color:#111">What counts</p>
+  <div class="counts">
+    <span class="count-chip">One clear job</span>
+    <span class="count-chip">Touches a real tool</span>
+    <span class="count-chip">Demoable in two minutes</span>
+    <span class="count-chip">Solo build · help each other</span>
+  </div>
+  <aside class="notes">Do not show the theme. Samples are inspiration, not clones. Existing code, APIs, and connected accounts are fair game. Prior Grok Bot experience welcome.</aside>
+</section>
 
-      
+<section data-background-color="#F7F4EF">
+  <h2>What you get</h2>
+  <div class="perk-grid">
+    <div class="perk-card">
+      <div class="kicker">Build tools</div>
+      <h3>1 month of Cursor Pro</h3>
+      <p>Grok Bot included. Redemption details at the event.</p>
+      <p class="courtesy">Courtesy of SpaceXAI</p>
+    </div>
+    <div class="perk-card">
+      <div class="kicker">Merch</div>
+      <h3>Stickers + keychains</h3>
+      <p>SpaceXAI / Cursor merch for the room. Grab it after demos.</p>
+      <p class="courtesy">Courtesy of SpaceXAI</p>
+    </div>
+  </div>
+  <aside class="notes">Perks are Cursor Pro month + merch only. Don’t oversell. Redemption details shared in the room, not on the slide.</aside>
+</section>
 
-      
+<section class="build-slide" data-background-color="#F7F4EF">
+  <div class="blob-layer">
+    <img class="b-red" src="assets/blobs/red.svg" alt="">
+  </div>
+  <h2>Build time!</h2>
+  <div class="build-copy">
+    Each table has Grok Bot templates you can scan to start building.
+    <span class="dash">— Help is in the room. Demos at 7:30. Theme time, then go.</span>
+  </div>
+  <aside class="notes">Reveal the theme now if you haven’t. Start the clock: build ~6:35 → 7:25, queue 7:25, live demos 7:30. Hosts float. Ask for help early.</aside>
+</section>
 
-      
+<section class="close-slide" data-background-color="#F7F4EF">
+  <div class="blob-layer">
+    <img class="b-pink" src="assets/blobs/pink.svg" alt="">
+    <img class="b-orange" src="assets/blobs/orange.svg" alt="">
+    <img class="b-green" src="assets/blobs/green.svg" alt="">
+  </div>
+  <div class="gb-lockup"><img src="assets/grokbot-mark.svg" alt=""> Grok Bot</div>
+  <h1>Demo time · <span class="hl">7:30</span></h1>
+  <p class="lede">Show what it does. Working demo &gt; the pitch.</p>
+  <ul class="close-list">
+    <li>~2 minutes</li>
+    <li>Who it’s for + the job it does</li>
+    <li>Hosts queue · wrap by 8</li>
+  </ul>
+  <img class="foot-spacex" src="assets/spacex-black.svg" alt="SpaceX">
+  <aside class="notes">Cheer loud. After: Pro redemption, merch, 1789 / next steps. Keep it to Cursor Pro month + merch.</aside>
+</section>
 
-      
-
-      
-
-      
-
-      
-    </div></div>
+</div></div>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 <script>
-Reveal.initialize({hash:true,slideNumber:'c/t',transition:'fade',backgroundTransition:'fade',plugins:[RevealNotes]});
+Reveal.initialize({
+  hash: true,
+  width: 1280,
+  height: 720,
+  margin: 0.06,
+  minScale: 0.2,
+  maxScale: 2,
+  center: false,
+  slideNumber: "c/t",
+  transition: "fade",
+  backgroundTransition: "fade",
+  plugins: [RevealNotes]
+});
 </script>
-</body></html>
+</body>
+</html>
