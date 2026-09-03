@@ -1,3 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none">
-  <text x="0" y="34" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">Grok Bot</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" fill="none">
+  <circle cx="24" cy="24" r="24" fill="#111111"/>
+  <ellipse cx="16.2" cy="22.2" rx="6.4" ry="3.15" fill="#FFFFFF"/>
+  <ellipse cx="31.8" cy="22.2" rx="6.4" ry="3.15" fill="#FFFFFF"/>
+  <text x="58" y="33" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="700" fill="#111111">Grok Bot</text>
 </svg>

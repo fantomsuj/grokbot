@@ -1,164 +1,129 @@
 [
   {
     "c": 1,
-    "t": "UNC Grokbot Build Night",
+    "t": "Meet your new AI teammates",
     "b": [
-      "One hour to build · then demo live"
+      "Agents with their own computers that get work done.",
+      "UNC Chapel Hill Student Build Night",
+      "6:00–8:00pm · demos at 7:30"
     ],
-    "n": "High energy welcome. Short talk, then you build. Theme drops tonight — stay for that."
+    "n": "High-energy welcome. Short talk, then they build. Theme drops live — do not put it on the slide."
   },
   {
-    "k": "Icebreaker",
-    "t": "Surprising AI",
+    "k": "Agenda",
+    "t": "Agenda",
     "b": [
-      "What’s the weirdest / coolest way you’ve used AI?",
-      "Turn to a neighbor · 90 seconds",
-      "We’ll steal a few shout-outs"
+      "01 Welcome",
+      "02 Who we are / campus path",
+      "03 What is Grok Bot",
+      "04 Build time",
+      "05 Audience demos at 7:30"
     ],
-    "n": "Pose the question, give ~90 seconds to talk with neighbors, then pull 2–3 shout-outs from the room. Keep it light. Bridges into tonight’s build. (~2–3 min inside the 6:15–6:35 talk block.)"
+    "n": "Talk is short, build is the point, demos at 7:30, wrap by 8."
   },
   {
-    "k": "Open",
-    "t": "Who we are",
+    "t": "AI is evolving fast",
     "b": [
-      "[Host names]",
-      "Local builders · Innovate Carolina / 1789 crew",
-      "Here to help you ship tonight"
+      "Chatbots — Answer questions, people do the work",
+      "Copilots — Help with tasks, people drive every step",
+      "AI teammates — Own outcomes, start to finish. People set direction and review"
     ],
-    "n": "Human intros, one line each. Under a minute total."
+    "n": "Tonight is the third step — agents with computers."
   },
   {
-    "k": "Campus",
-    "t": "The student innovation path",
+    "t": "The challenge with most agents",
     "b": [
-      "Innovate Carolina — UNC I&E hub",
-      "1789 — incubator, mentors, mixers, Venture Fund",
-      "Launch Chapel Hill — accelerator downtown"
+      "Complicated setup",
+      "Local first",
+      "Painful sharing",
+      "Connector limits",
+      "Constant monitoring"
     ],
-    "n": "Quick ladder. If tonight sparks something, there is a path after."
+    "n": "Usual agent headaches. Grok Bot is the other shape."
   },
   {
-    "k": "Students",
-    "t": "1789, quick",
+    "t": "Today everyone wastes time with routine work",
     "b": [
-      "Mentors + community",
-      "Mixers and pitches",
-      "Seed rounds via the 1789 Venture Fund"
+      "Today: high-value vs rote work",
+      "Grok Bots operate 24/7 — Course Compass, Inbox triage, Outreach, Franklin After Dark, Deck helper",
+      "Tomorrow: leverage time + increased productivity"
     ],
-    "n": "Real support for student builders. Intros after if people want them."
+    "n": "Orange is busywork. Hand it to bots. Student-flavored names are inspiration, not assignments."
   },
   {
-    "k": "Downtown",
-    "t": "Launch Chapel Hill",
+    "t": "Introducing Grok Bot",
     "b": [
-      "Innovate Carolina Junction (downtown)",
-      "Launch Powered by KPMG · Launch Local",
-      "Summer accelerators for student founders"
+      "Create bots for jobs",
+      "Message like teammates",
+      "Memory",
+      "Log into tools",
+      "Routines",
+      "Share"
     ],
-    "n": "Downtown, concrete next step for founders."
-  },
-  {
-    "k": "Stack",
-    "t": "SpaceXAI / Cursor",
-    "b": [
-      "Cursor is part of SpaceX / SpaceXAI",
-      "Building useful AI: Grok, Cursor, GrokBot",
-      "Tonight tools, courtesy of SpaceXAI"
-    ],
-    "n": "Exciting, not brochure. SpaceXAI is backing tonight Pro + merch."
-  },
-  {
-    "k": "Product",
-    "t": "What is GrokBot?",
-    "b": [
-      "AI agents you spin up for real work",
-      "Connect Gmail, Slack, calendar, the web",
-      "Schedules · hand work off to each other"
-    ],
-    "n": "Not another chatbot. Agents that touch your tools, run on a clock, and collaborate."
+    "n": "Not another chatbot. Demo the app if the room is with you."
   },
   {
     "k": "How to use one",
     "t": "The loop",
     "b": [
-      "Task → skill → routine",
+      "Task → Skill → Routine",
       "Connector > clicking",
       "Draft first. You send."
     ],
-    "n": "Draw it with your hands: do the task once with the bot, save the method as a skill, then set a routine for when it runs. Use a connector when one exists — more reliable than clicking a website. And keep sending/buying/deleting behind your approval; the bot preps, you approve the last inch."
+    "n": "Task once, save as a skill, then a routine. Connector over clicking. Bot drafts, they send."
+  },
+  {
+    "k": "Campus",
+    "t": "Who we are / campus path",
+    "b": [
+      "Innovate Carolina — UNC I&E hub",
+      "1789 — incubator, mentors, mixers, Venture Fund",
+      "Launch Chapel Hill — accelerator downtown",
+      "SpaceXAI / Cursor — tonight’s stack",
+      "Grok Bot — agents with computers"
+    ],
+    "n": "Human intros first. Then the ladder in one breath."
   },
   {
     "k": "Tonight",
-    "t": "Tonight",
+    "t": "Tonight’s build",
     "b": [
-      "~1 hour to build something real with GrokBot",
-      "Theme revealed here at the event",
-      "Then you demo it live"
+      "Theme drops live — stays off the slides",
+      "Course Compass — semester survival",
+      "Franklin After Dark — campus nights",
+      "One clear job · touches a real tool · demoable in two minutes"
     ],
-    "n": "Clear promise. Theme stays secret until you say it. Build then demo."
+    "n": "Do not show the theme. Samples are inspiration, not clones."
   },
   {
     "k": "Perks",
     "t": "What you get",
     "b": [
-      "1 month of Cursor Pro (GrokBot included)",
-      "SpaceXAI / Cursor merch — stickers + keychains",
-      "An hour to build with other builders",
-      "A live demo slot"
+      "1 month of Cursor Pro (Grok Bot included)",
+      "Stickers + keychains",
+      "Courtesy of SpaceXAI"
     ],
-    "n": "Courtesy of SpaceXAI. Redemption details for Cursor Pro shared at the event."
-  },
-  {
-    "k": "Rules",
-    "t": "What counts",
-    "b": [
-      "Theme drops tonight — build something creative with GrokBot",
-      "Start from existing code, APIs, or connected accounts",
-      "Prior GrokBot experience welcome",
-      "Solo build · talk, share, help each other"
-    ],
-    "n": "Existing projects and connected accounts are fair game. Primarily solo; collaboration encouraged."
-  },
-  {
-    "k": "Starters",
-    "t": "Samples (inspiration)",
-    "b": [
-      "Course Compass — semester survival",
-      "Franklin After Dark — campus nights",
-      "One clear job · actually useful"
-    ],
-    "n": "Inspiration only — not clone these. Show range: useful and playful."
-  },
-  {
-    "k": "Clock",
-    "t": "Build clock",
-    "b": [
-      "Build: ~6:35 → 7:25",
-      "Queue: 7:25",
-      "Live demos: 7:30"
-    ],
-    "n": "Start the clock. Hosts float. Show the coolest thing it does."
+    "n": "Perks are Cursor Pro month + merch only. Redemption details in the room."
   },
   {
     "c": 1,
-    "go": 1,
-    "t": "Go build.",
+    "t": "Build time!",
     "b": [
-      "Theme time → then build",
-      "Ask for help early",
-      "See you at 7:30"
+      "Tables have Grok Bot templates you can scan",
+      "Help is in the room",
+      "Demos at 7:30"
     ],
-    "n": "Reveal theme live (not on slide). Kick off build."
+    "n": "Reveal theme if you haven’t. Build ~6:35 → 7:25, queue 7:25, demos 7:30."
   },
   {
     "k": "Competition",
     "t": "Demo time · 7:30",
     "b": [
       "~2 minutes — show what it does",
-      "Working demo > talk about the idea",
-      "Who it is for + the job it does",
+      "Working demo > the pitch",
+      "Who it’s for + the job it does",
       "Hosts queue · wrap by 8"
     ],
-    "n": "Cheer loud. After: Pro redemption, merch, 1789/next steps. Perks are Cursor Pro month + merch only."
+    "n": "Cheer loud. After: Pro redemption, merch, 1789 / next steps."
   }
 ]
