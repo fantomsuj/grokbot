@@ -35,10 +35,13 @@ html, body { background: var(--cream); }
 }
 .reveal .slides { text-align: left; }
 .reveal .slides section {
-  padding: 44px 56px 52px;
+  height: 100%;
+  width: 100%;
+  padding: 40px 56px 56px;
   box-sizing: border-box;
   overflow: hidden;
   color: var(--ink);
+  background: transparent;
 }
 .reveal h1, .reveal h2, .reveal h3 {
   font-family: Inter, sans-serif;
@@ -91,29 +94,43 @@ html, body { background: var(--cream); }
 .foot-spacex {
   position: absolute;
   left: 56px;
-  bottom: 28px;
+  bottom: 26px;
   height: 15px;
   width: auto;
   display: block;
+  z-index: 3;
 }
+.foot-row {
+  position: absolute;
+  left: 56px;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 3;
+}
+.foot-row .unc { height: 32px; width: auto; }
+.foot-row .sx { height: 15px; width: auto; }
 .blob-layer {
   position: absolute;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
+  z-index: 0;
 }
 .blob-layer img { position: absolute; display: block; }
 
 /* Title */
 .title-slide { padding: 40px 56px 56px !important; }
-.title-slide h1 { font-size: 72px; max-width: 11ch; margin-top: 54px; }
-.title-slide .b-pink { width: 168px; top: 36px; left: 46%; }
-.title-slide .b-orange { width: 210px; top: 22%; right: 7%; }
-.title-slide .b-blue { width: 230px; top: -48px; right: -54px; }
-.title-slide .b-purple { width: 300px; bottom: -110px; left: 34%; }
-.title-slide .b-green { width: 170px; top: 46%; right: -28px; }
-.title-slide .b-teal { width: 210px; bottom: -72px; right: -36px; }
-.title-slide .b-lavender { width: 120px; top: 58%; left: 58%; }
+.title-copy { position: relative; z-index: 2; max-width: 560px; }
+.title-slide h1 { font-size: 72px; max-width: 11ch; margin-top: 48px; }
+.title-slide .b-pink { width: 150px; top: 18px; right: 36%; }
+.title-slide .b-orange { width: 200px; top: 16%; right: 4%; }
+.title-slide .b-blue { width: 230px; top: -52px; right: -58px; }
+.title-slide .b-purple { width: 290px; bottom: -120px; right: 12%; }
+.title-slide .b-green { width: 158px; top: 46%; right: -36px; }
+.title-slide .b-teal { width: 200px; bottom: -80px; right: -44px; }
+.title-slide .b-lavender { width: 108px; top: 56%; right: 30%; }
 
 /* Agenda */
 .agenda-wrap {
@@ -151,7 +168,7 @@ html, body { background: var(--cream); }
   display: flex;
   align-items: flex-end;
   gap: 18px;
-  height: 470px;
+  height: 430px;
   padding-right: 56px;
   position: relative;
 }
@@ -165,6 +182,7 @@ html, body { background: var(--cream); }
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 .stair-card:nth-child(1) { margin-bottom: 0; }
 .stair-card:nth-child(2) { margin-bottom: 72px; }
@@ -172,6 +190,8 @@ html, body { background: var(--cream); }
   margin-bottom: 148px;
   border: 2.5px solid var(--purple-deep);
   min-height: 248px;
+  overflow: visible;
+  z-index: 2;
 }
 .stair-ico {
   width: 36px;
@@ -244,9 +264,8 @@ html, body { background: var(--cream); }
   border: 1.5px solid var(--pain-border);
   border-radius: 16px;
   padding: 14px 14px 12px;
-  min-height: 228px;
+  min-height: 210px;
 }
-.pain-card.span2 { grid-column: span 1; }
 .pain-hd {
   display: flex;
   align-items: center;
@@ -278,7 +297,7 @@ html, body { background: var(--cream); }
   font-size: 11px;
   line-height: 1.45;
   color: #3A3A3A;
-  min-height: 148px;
+  min-height: 132px;
 }
 .pain-inner .dim { color: #9A9590; }
 .file-row {
@@ -487,7 +506,7 @@ html, body { background: var(--cream); }
 .path-row::before {
   content: "";
   position: absolute;
-  top: 22px;
+  top: 42px;
   left: 8%;
   right: 8%;
   height: 2px;
@@ -499,25 +518,17 @@ html, body { background: var(--cream); }
   z-index: 1;
   text-align: center;
 }
+.path-card h3 { font-size: 16px; margin-bottom: 10px; letter-spacing: -0.03em; }
 .path-dot {
   width: 16px;
   height: 16px;
   border-radius: 99px;
   background: var(--purple);
-  margin: 14px auto 16px;
+  margin: 0 auto 16px;
   border: 3px solid var(--cream);
   box-shadow: 0 0 0 2px var(--purple);
 }
-.path-card h3 { font-size: 16px; margin-bottom: 8px; letter-spacing: -0.03em; }
 .path-card p { font-size: 13px; color: var(--muted); line-height: 1.35; font-weight: 500; }
-.campus-logos {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-top: 36px;
-}
-.campus-logos img.unc { height: 42px; }
-.campus-logos img.sx { height: 16px; }
 
 /* Tonight */
 .sample-grid {
@@ -584,13 +595,13 @@ html, body { background: var(--cream); }
 }
 
 /* Build time */
-.build-slide h2 { font-size: 72px; }
+.build-slide h2 { font-size: 72px; position: relative; z-index: 2; }
 .build-copy {
   position: absolute;
   right: 64px;
-  top: 46%;
+  top: 42%;
   transform: translateY(-50%);
-  max-width: 520px;
+  max-width: 500px;
   text-align: right;
   font-style: italic;
   color: #6B6660;
@@ -598,12 +609,13 @@ html, body { background: var(--cream); }
   font-weight: 500;
   line-height: 1.45;
   letter-spacing: -0.02em;
+  z-index: 2;
 }
 .build-copy .dash { display: block; margin-top: 14px; font-style: italic; }
 .build-slide .b-red {
-  width: 420px;
-  left: -90px;
-  bottom: -160px;
+  width: 460px;
+  left: -110px;
+  bottom: -170px;
 }
 
 /* Close */
@@ -640,10 +652,12 @@ html, body { background: var(--cream); }
     <img class="b-purple" src="assets/blobs/purple.svg" alt="">
     <img class="b-teal" src="assets/blobs/teal.svg" alt="">
   </div>
-  <div class="gb-lockup"><img src="assets/grokbot-mark.svg" alt=""> Grok Bot</div>
-  <h1>Meet your new<br><span class="hl">AI teammates</span></h1>
-  <p class="lede">Agents with their own computers that get work done.</p>
-  <p class="meta">UNC Chapel Hill Student Build Night<br>6:00–8:00pm · demos at 7:30</p>
+  <div class="title-copy">
+    <div class="gb-lockup"><img src="assets/grokbot-mark.svg" alt=""> Grok Bot</div>
+    <h1>Meet your new<br><span class="hl">AI teammates</span></h1>
+    <p class="lede">Agents with their own computers that get work done.</p>
+    <p class="meta">UNC Chapel Hill Student Build Night<br>6:00–8:00pm · demos at 7:30</p>
+  </div>
   <img class="foot-spacex" src="assets/spacex-black.svg" alt="SpaceX">
   <aside class="notes">High-energy welcome. Short talk, then they build. Theme drops live — do not put it on the slide. Point at the blobs: these are teammates, not chat windows.</aside>
 </section>
@@ -675,7 +689,10 @@ html, body { background: var(--cream); }
     </div>
     <div class="stair-card">
       <svg class="stair-ico" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M8 16l6-8 6 8M22 16l6-8 6 8M8 30l6-8 6 8M22 30l6-8 6 8" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7 16l6-8 6 8" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 16l6-8 6 8" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7 32l6-8 6 8" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 32l6-8 6 8" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <h3>Copilots</h3>
       <p>Help with tasks, people drive every step</p>
@@ -744,7 +761,7 @@ html, body { background: var(--cream); }
         <div class="status-row"><span>ConnectCarolina</span><span class="pill-no">Unavailable</span></div>
       </div>
     </div>
-    <div class="pain-card" style="grid-column: span 2;">
+    <div class="pain-card">
       <div class="pain-hd"><span class="x-circle">×</span> Constant monitoring</div>
       <div class="pain-inner">
         pnpm install && pnpm --filter web build && pnpm --filter api prisma generate && pnpm --filter api db:seed:test
@@ -885,32 +902,32 @@ html, body { background: var(--cream); }
   <p class="lede" style="color:#6F6A64">Local builders, a campus ladder, and tonight’s tools.</p>
   <div class="path-row">
     <div class="path-card">
-      <div class="path-dot"></div>
       <h3>Innovate Carolina</h3>
+      <div class="path-dot"></div>
       <p>UNC I&amp;E hub. If tonight sparks something, start here.</p>
     </div>
     <div class="path-card">
-      <div class="path-dot"></div>
       <h3>1789</h3>
+      <div class="path-dot"></div>
       <p>Incubator, mentors, mixers, Venture Fund.</p>
     </div>
     <div class="path-card">
-      <div class="path-dot"></div>
       <h3>Launch Chapel Hill</h3>
+      <div class="path-dot"></div>
       <p>Accelerator downtown. Next step for founders.</p>
     </div>
     <div class="path-card">
-      <div class="path-dot"></div>
       <h3>SpaceXAI / Cursor</h3>
+      <div class="path-dot"></div>
       <p>Grok, Cursor, Grok Bot. Tonight’s stack.</p>
     </div>
     <div class="path-card">
-      <div class="path-dot"></div>
       <h3>Grok Bot</h3>
+      <div class="path-dot"></div>
       <p>Agents with computers. What you build in this room.</p>
     </div>
   </div>
-  <div class="campus-logos">
+  <div class="foot-row">
     <img class="unc" src="assets/interlocking-nc-white-navy-rgb.svg" alt="UNC">
     <img class="sx" src="assets/spacex-black.svg" alt="SpaceX">
   </div>
