@@ -88,22 +88,65 @@
 .reveal .controls { color: var(--carolina); }
 .reveal .slide-number { color: rgba(255,255,255,0.45); font-family: Inter, sans-serif; }
 
-/* Title / poster */
-.reveal .title-slide {
-  background: #000 url("assets/poster.png") right bottom / min(52%, 440px) auto no-repeat !important;
+/* Title / poster
+   Scope to the section only. Reveal copies slide classes onto .slide-background,
+   so `.reveal .title-slide` would paint poster.png twice. */
+.reveal .slides section.title-slide {
+  background: #000 !important;
 }
-.reveal .title-slide .title-copy {
+.reveal .slide-background.title-slide {
+  background-image: none !important;
+}
+.reveal .slides section.title-slide .title-poster {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: min(68%, 470px);
+  width: auto;
+  max-width: 42%;
+  object-fit: contain;
+  object-position: right center;
+  pointer-events: none;
+  z-index: 0;
+}
+.reveal .slides section.title-slide .title-copy {
   max-width: 52%;
   text-align: left;
   position: relative;
   z-index: 2;
 }
-.reveal .title-slide h1 {
-  font-size: 2.05em;
-  line-height: 1.05;
+.reveal .slides section.title-slide h1 {
+  font-size: 1.72em;
+  line-height: 1.04;
+  margin: 0 0 0.08em;
 }
-.reveal .title-slide .subtitle { color: #D1D5DB; font-size: 1.05em; }
-.reveal .title-slide .meta { color: #6B7280; font-size: 0.85em; margin-top: 1.2em; font-weight: 600; letter-spacing: 0.04em; }
+.reveal .slides section.title-slide .kicker {
+  margin: 0 0 0.4em;
+}
+.reveal .slides section.title-slide .subtitle {
+  color: #D1D5DB;
+  font-size: 0.9em;
+  margin-top: 0.22em;
+}
+.reveal .slides section.title-slide .meta {
+  color: #6B7280;
+  font-size: 0.7em;
+  margin-top: 0.5em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.reveal .slides section.title-slide .logo-row {
+  flex-wrap: nowrap;
+  margin-top: 0.75em;
+  gap: 0.5rem;
+}
+.reveal .slides section.title-slide .logo-pill {
+  padding: 0.28rem 0.65rem;
+  font-size: 0.56em;
+  flex-shrink: 0;
+}
 
 /* Logo strip */
 .logo-row {
@@ -148,10 +191,9 @@
   border-radius: 14px;
   padding: 0.75rem 0.85rem;
   background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  min-height: 84px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .partner-card .label {
   font-size: 0.62em;
@@ -159,13 +201,39 @@
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 700;
+  line-height: 1.2;
 }
-.partner-card img { height: 34px; width: auto; margin-top: 0.8rem; object-fit: contain; align-self: flex-start; }
+.partner-card .partner-logo {
+  height: 56px;
+  margin-top: 0.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+.partner-card .partner-logo img {
+  height: 32px;
+  width: auto;
+  max-width: 100%;
+  max-height: 48px;
+  margin: 0;
+  object-fit: contain;
+  object-position: left center;
+}
+.partner-card .partner-logo .logo-spacex {
+  height: 18px;
+}
+.partner-card .partner-logo .logo-poster {
+  height: 48px;
+  width: 48px;
+  border-radius: 10px;
+  object-fit: cover;
+}
 .partner-card .word {
   font-size: 1.05em;
   font-weight: 800;
   color: #fff;
-  margin-top: 0.75rem;
+  margin-top: 0.45rem;
   letter-spacing: -0.02em;
 }
 .footer-logos {
@@ -199,13 +267,14 @@
 
 </style></head><body>
 <div class="reveal"><div class="slides">
-      <section class="center-slide title-slide" data-background-color="#000000">
+      <section class="title-slide" data-background-color="#000000">
+        <img class="title-poster" src="assets/poster.png" alt="">
         <div class="title-copy">
           <p class="kicker" style="--accent:var(--carolina)">UNC Chapel Hill</p>
           <h1>Grok Bot<br/>Student Build Night</h1>
           <p class="subtitle">One hour to build · then demo live</p>
           <p class="meta">6:00 – 8:00pm · demos at 7:30</p>
-          <div class="logo-row" style="margin-top:1.8rem">
+          <div class="logo-row">
             <span class="logo-pill"><img src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="" /> UNC</span>
             <span class="logo-pill"><img src="assets/spacex-white.svg" alt="" style="height:12px" /> SpaceXAI</span>
             <span class="logo-pill"><img src="assets/cursor-logo.svg" alt="" style="height:16px;border-radius:4px" /> Cursor</span>
@@ -225,13 +294,11 @@
         <h2>Who we are</h2>
         <ul><li>[Host names]</li><li>Local builders · Innovate Carolina / 1789 crew</li><li>Here to help you ship tonight</li></ul>
         <aside class="notes">Human intros, one line each. Under a minute total.</aside>
-        <div class="footer-logos"><img class="logo-unc" src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC" /><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" /><img class="logo-cursor" src="assets/cursor-logo.svg" alt="Cursor" /><img class="logo-poster" src="assets/poster.png" alt="Grok Bot" style="height:26px;border-radius:6px" /></div>
       </section>
       <section class="accent-sky">
         <p class="kicker">Campus</p>
         <h2>The student innovation path</h2>
         <ul><li>Innovate Carolina — UNC I&amp;E hub</li><li>1789 — incubator, mentors, mixers, Venture Fund</li><li>Launch Chapel Hill — accelerator downtown</li></ul>
-        <div class="partner-grid"><div class="partner-card"><div class="label">Campus</div><img src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC Chapel Hill" /></div><div class="partner-card"><div class="label">SpaceXAI</div><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" style="height:22px" /><div class="word">SpaceXAI / Cursor</div></div><div class="partner-card"><div class="label">Tonight</div><img src="assets/poster.png" alt="Grok Bot" style="height:48px;border-radius:10px;object-fit:cover;width:88px" /><div class="word">Grok Bot</div></div></div>
         <aside class="notes">Quick ladder. If tonight sparks something, there is a path after.</aside>
       </section>
       <section class="accent-lime">
@@ -250,7 +317,28 @@
         <p class="kicker">Stack</p>
         <h2>SpaceXAI / Cursor</h2>
         <ul><li>Cursor is part of SpaceX / SpaceXAI</li><li>Building useful AI: Grok, Cursor, GrokBot</li><li>Tonight tools, courtesy of SpaceXAI</li></ul>
-        <div class="partner-grid"><div class="partner-card"><div class="label">Campus</div><img src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC Chapel Hill" /></div><div class="partner-card"><div class="label">SpaceXAI</div><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" style="height:22px" /><div class="word">SpaceXAI / Cursor</div></div><div class="partner-card"><div class="label">Tonight</div><img src="assets/poster.png" alt="Grok Bot" style="height:48px;border-radius:10px;object-fit:cover;width:88px" /><div class="word">Grok Bot</div></div></div>
+        <div class="partner-grid">
+          <div class="partner-card">
+            <div class="label">Campus</div>
+            <div class="partner-logo">
+              <img src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC Chapel Hill" />
+            </div>
+          </div>
+          <div class="partner-card">
+            <div class="label">SpaceXAI</div>
+            <div class="partner-logo">
+              <img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" />
+            </div>
+            <div class="word">SpaceXAI / Cursor</div>
+          </div>
+          <div class="partner-card">
+            <div class="label">Tonight</div>
+            <div class="partner-logo">
+              <img class="logo-poster" src="assets/poster.png" alt="Grok Bot" />
+            </div>
+            <div class="word">Grok Bot</div>
+          </div>
+        </div>
         <aside class="notes">Exciting, not brochure. SpaceXAI is backing tonight Pro + merch.</aside>
       </section>
       <section class="accent-orange">
@@ -271,7 +359,6 @@
         <h2>What you get</h2>
         <ul><li>1 month of Cursor Pro (GrokBot included)</li><li>SpaceXAI / Cursor merch — stickers + keychains</li><li>An hour to build with other builders</li><li>A live demo slot</li></ul>
         <aside class="notes">Courtesy of SpaceXAI. Redemption details for Cursor Pro shared at the event.</aside>
-        <div class="footer-logos"><img class="logo-unc" src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC" /><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" /><img class="logo-cursor" src="assets/cursor-logo.svg" alt="Cursor" /><img class="logo-poster" src="assets/poster.png" alt="Grok Bot" style="height:26px;border-radius:6px" /></div>
       </section>
       <section class="accent-teal">
         <p class="kicker">Rules</p>
@@ -292,54 +379,31 @@
         <ul><li>Build: ~6:35 → 7:25</li><li>Queue: 7:25</li><li>Live demos: 7:30</li></ul>
         <aside class="notes">Start the clock. Hosts float. Show the coolest thing it does.</aside>
       </section>
-      <section class="center-slide accent-sky">
+      <section class="accent-sky">
+        <p class="kicker">Go</p>
         <h1 class="big-line">Go build.</h1>
-        <p class="subtitle">See you at 7:30</p>
         <ul><li>Theme time → then build</li><li>Ask for help early</li><li>See you at 7:30</li></ul>
         <aside class="notes">Reveal theme live (not on slide). Kick off build.</aside>
-        <div class="footer-logos"><img class="logo-unc" src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC" /><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" /><img class="logo-cursor" src="assets/cursor-logo.svg" alt="Cursor" /><img class="logo-poster" src="assets/poster.png" alt="Grok Bot" style="height:26px;border-radius:6px" /></div>
       </section>
       <section class="accent-lime">
         <p class="kicker">Competition</p>
         <h2>Demo time · 7:30</h2>
         <ul><li>~2 minutes — show what it does</li><li>Working demo &gt; talk about the idea</li><li>Who it is for + the job it does</li><li>Hosts queue · wrap by 8</li></ul>
         <aside class="notes">Cheer loud. After: Pro redemption, merch, 1789/next steps. Perks are Cursor Pro month + merch only.</aside>
-        <div class="footer-logos"><img class="logo-unc" src="assets/interlocking-nc-carolinablue-white-rgb.svg" alt="UNC" /><img class="logo-spacex" src="assets/spacex-white.svg" alt="SpaceX" /><img class="logo-cursor" src="assets/cursor-logo.svg" alt="Cursor" /><img class="logo-poster" src="assets/poster.png" alt="Grok Bot" style="height:26px;border-radius:6px" /></div>
       </section>
-    </div>
-        </div>
-        <aside class="notes">High energy welcome. Short talk, then you build. Theme drops tonight — stay for that.</aside>
-      </section>
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
     </div></div>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 <script>
-Reveal.initialize({hash:true,slideNumber:'c/t',transition:'fade',backgroundTransition:'fade',plugins:[RevealNotes]});
+Reveal.initialize({
+  hash: true,
+  width: 1280,
+  height: 720,
+  margin: 0.04,
+  slideNumber: 'c/t',
+  transition: 'fade',
+  backgroundTransition: 'fade',
+  plugins: [RevealNotes]
+});
 </script>
 </body></html>
