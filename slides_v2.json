@@ -78,6 +78,16 @@
     "n": "Not another chatbot. Agents that touch your tools, run on a clock, and collaborate."
   },
   {
+    "k": "How to use one",
+    "t": "The loop",
+    "b": [
+      "Task → skill → routine",
+      "Connector > clicking",
+      "Draft first. You send."
+    ],
+    "n": "Draw it with your hands: do the task once with the bot, save the method as a skill, then set a routine for when it runs. Use a connector when one exists — more reliable than clicking a website. And keep sending/buying/deleting behind your approval; the bot preps, you approve the last inch."
+  },
+  {
     "k": "Tonight",
     "t": "Tonight",
     "b": [
